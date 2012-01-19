@@ -1,0 +1,26 @@
+<h1>Sign in</h1>
+
+<div class="block">
+<%= form_for :session, :url => sessions_path, :html => { :class => "form login"} do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+ <br/>
+ <div class="group navform wat-cf">
+              <div class="right"> 
+ <div class="field">
+    <%= f.submit "Sign in" %>
+  </div>
+  </div>
+  </div>
+
+
+<% end %>
+</div>
+<br/><br/>
+<h3>New user? <%= link_to "Sign up now!", signup_path %></h3>
