@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+ <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+ 
+
+<head>
+  <title>Baassfx</title>
+  <%= stylesheet_link_tag 'web_app_theme' %>
+
+  <%= stylesheet_link_tag "application" %>
+
+  <%= javascript_include_tag "application" %>
+  
+  <%= csrf_meta_tag %>
+</head>
+<body >
+
+<%= render "layouts/topbar"%>
+
+
+ <div class="container-fluid" id="container-wrap">
+   <div class="sidebar">
+     <%= render 'layouts/sidebar_left'%> 
+    </div>
+    <div class="content">
+  <div id="container" role="main">
+
+    <div id="wrapper" class="wat-cf ">
+     <%unless flash.nil?%>
+      <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+     <%end%>
+      <div id="main">
+        <%= yield %>
+        <footer>
+	<div id="footer">
+          <div class="block">
+            <p>Copyright &copy; <%= Time.now.year %> Baassfx.</p>
+          </div>      
+        </div>
+ 	</footer>
+	<%= debug(params) if Rails.env.development? %>
+      </div>
+    </div>    
+  </div>
+
+
+</div><!--/Container-->
+</div><!--/container-fluid-->
+
+
+
+</body>
+</html>
