@@ -9,6 +9,7 @@ gem 'pg'
 gem 'web-app-theme'
 gem 'json'
 
+gem 'carmen'
 gem 'therubyracer'
 gem 'formtastic'
 
