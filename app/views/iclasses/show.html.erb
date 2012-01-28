@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @iclass.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @iclass.desc %>
+</p>
+
+
+<%= link_to 'Edit', edit_iclass_path(@iclass) %> |
+<%= link_to 'Back', iclasses_path %>

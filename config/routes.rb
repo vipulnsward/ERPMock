@@ -1,6 +1,10 @@
 MyMock::Application.routes.draw do
 
 
+  resources :iclasses
+
+  resources :items
+
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]  
 
