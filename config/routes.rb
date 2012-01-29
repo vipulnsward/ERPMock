@@ -1,6 +1,8 @@
 MyMock::Application.routes.draw do
 
 
+  resources :p_orders
+
   resources :suppliers
 
   resources :line_items

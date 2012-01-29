@@ -1,0 +1,18 @@
+<%= semantic_form_for @p_order do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :ref %>
+    <%= f.input :issue %>
+    <%= f.input :expires %>
+    <%= f.input :supplier,  :include_blank => false%>	 
+   
+    <%= f.inputs :name => 'Line Item #%i', :for => :line_items do |f|  %>
+      <%= f.input :qty %>
+      <%= f.input :item, :include_blank => false  %> 
+    <%end%>
+
+ <% end %>
+
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>

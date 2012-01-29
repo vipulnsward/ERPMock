@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ref:</b>
+  <%= @p_order.ref %>
+
+
+
+  <b>Issue:</b>
+  <%= @p_order.issue %>
+
+
+  <b>Expires:</b>
+  <%= @p_order.expires %>
+
+  <b>Supplier:</b>
+  <%= @p_order.supplier.name %>
+
+
+</p>
+
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Rate</th>
+<th>Quantity</th>
+<th>Sub-Total</th>
+</tr>
+
+<%sum=0.0%>
+<% @p_order.line_items.each do |item| %>
+ <%sub=(item.qty*item.item.rate)%> 
+ <%sum =sum + sub%>
+  <tr>
+    <td><%= item.item.id%></td>
+    <td><%= item.item.name %></td>
+    <td><%= item.item.rate %></td>
+    <td><%= item.qty%></td> 
+    <td><%= number_to_currency(sub).html_safe%></td>
+  </tr>
+<%end%>
+
+
+</table>
+
+<b>Total : <%=number_to_currency(sum).html_safe%> </b>
+<br/>
+
+<%= link_to 'Edit', edit_p_order_path(@p_order) %> |
+<%= link_to 'Back', p_orders_path %>

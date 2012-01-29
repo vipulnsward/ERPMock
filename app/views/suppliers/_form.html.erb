@@ -1,0 +1,22 @@
+<%= semantic_form_for @supplier do |f| %>
+  <%= f.inputs "Details", :id =>"details" do %>
+    <%= f.input :name %>
+    <%= f.input :desc , :label => "Description", :as=> :text, :input_html => { :class => 'autogrow', :rows => 10, :cols => 20, :maxlength => 10  } %>
+  <%end%>
+  <%= f.inputs "Address", :id=> "address" do%>
+    <%= f.input :street %>
+    <%= f.input :state %>
+    <%= f.input :country %>
+    <%= f.input :zip %>
+  <%end%>
+  <%= f.inputs "Contact", :id=> "contact" do %>
+    <%= f.input :mail %>
+    <%= f.input :altmail, :label=> "Aleternate Email"%>
+    <%= f.input :ct1 , :label => "Contact" %>
+    <%= f.input :ct2 , :label => "Alternate Contact"%>
+  <% end %>
+
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>

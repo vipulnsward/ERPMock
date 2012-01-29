@@ -1,0 +1,31 @@
+<h1>Listing p_orders</h1>
+
+<table>
+  <tr>
+    <th>Ref</th>
+    <th>Issue</th>
+    <th>Expires</th>
+    <th>Supplier</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @p_orders.each do |p_order| %>
+  <tr>
+    <td><%= p_order.ref %></td>
+    <td><%= p_order.issue %></td>
+    <td><%= p_order.expires %></td>
+    <td><%= p_order.supplier.name%></td>
+     <td><%= link_to content_tag(:span, '', :class => "ui-icon ui-icon-folder-open"), p_order, :title => "Show", :class => "ui-state-default ui-corner-all", :id => "no-border" %></td>
+    <td><%= link_to content_tag(:span, '', :class => "ui-icon ui-icon-gear"), edit_p_order_path(p_order), :title => "Edit", :class => "ui-state-default ui-corner-all", :id => "no-border"  %></td>
+    <td><%= link_to content_tag(:span, '', :class => "ui-icon ui-icon-trash"), p_order, :confirm => "Are you sure you?", :title => "Delete", :method => :delete, :class => "ui-state-default ui-corner-all", :id => "no-border"  %></td>
+
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New P order', new_p_order_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120128090207) do
+ActiveRecord::Schema.define(:version => 20120128165539) do
 
   create_table "iclasses", :force => true do |t|
     t.string   "name"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(:version => 20120128090207) do
     t.integer  "item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "p_order_id"
+  end
+
+  create_table "p_orders", :force => true do |t|
+    t.integer  "ref"
+    t.string   "issue"
+    t.string   "expires"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "supplier_id"
   end
 
   create_table "suppliers", :force => true do |t|

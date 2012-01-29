@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ref: 1
+  issue: MyString
+  expires: MyString
+
+two:
+  ref: 1
+  issue: MyString
+  expires: MyString
