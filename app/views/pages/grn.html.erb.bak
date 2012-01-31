@@ -1,0 +1,22 @@
+<div center=center>
+<p>
+  <b>Grn date:</b>
+  <%= @grn_po.grn_date %>
+</p>
+
+<p>
+  <b>Bill:</b>
+  <%= @grn_po.bill %>
+</p>
+
+<p>
+  <b>Billdate:</b>
+  <%= @grn_po.billdate %>
+</p>
+
+<p>
+  <b>Inward:</b>
+  <%= @grn_po.inward_id %>
+</p>
+
+<div>

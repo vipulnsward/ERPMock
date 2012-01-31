@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Indate:</b>
+  <%= @inward.indate %>
+</p>
+
+<p>
+  <b>Intime:</b>
+  <%= @inward.intime %>
+</p>
+
+<p>
+  <b>Chalan:</b>
+  <%= @inward.chalan %>
+</p>
+
+<p>
+  <b>Chalandate:</b>
+  <%= @inward.chalandate %>
+</p>
+
+<p>
+  <b>P order:</b>
+  <%= @inward.p_order_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_inward_path(@inward) %> |
+<%= link_to 'Back', inwards_path %> |
+<%= link_to 'Process PO', edit_p_order_path(@inward.p_order) %>

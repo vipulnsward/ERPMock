@@ -1,0 +1,12 @@
+<%= semantic_form_for @grn_po do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :grn_date %>
+    <%= f.input :bill %>
+    <%= f.input :billdate %>
+    <%= f.input :inward ,:as => :select,:include_blank => false,  :hint => " Shows Inward ID : PO ID : Chalan ID" , :label_method => Proc.new { |x| "#{x.id} - #{x.chalan} - #{x.p_order_id}"  }%>
+  <% end %>
+
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>

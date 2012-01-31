@@ -1,6 +1,12 @@
 MyMock::Application.routes.draw do
 
 
+  resources :capital_types
+
+  resources :grn_pos
+  
+  resources :inwards
+
   resources :p_orders
 
   resources :suppliers
@@ -26,7 +32,10 @@ MyMock::Application.routes.draw do
 
   get "pages/help"
 
+  get "pages/create_grn_pdf"
 
+  get "pages/grn"
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: inwards
+#
+#  id         :integer         not null, primary key
+#  indate     :string(255)
+#  intime     :string(255)
+#  chalan     :string(255)
+#  chalandate :string(255)
+#  p_order_id :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  indate: MyString
+  intime: MyString
+  chalan: MyString
+  chalandate: MyString
+  p_order_id: 1
+
+two:
+  indate: MyString
+  intime: MyString
+  chalan: MyString
+  chalandate: MyString
+  p_order_id: 1

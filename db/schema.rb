@@ -10,11 +10,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120128165539) do
+ActiveRecord::Schema.define(:version => 20120131070339) do
+
+  create_table "capital_types", :force => true do |t|
+    t.string   "name"
+    t.float    "amount"
+    t.boolean  "type"
+    t.string   "ref"
+    t.string   "tr_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "grn_pos", :force => true do |t|
+    t.string   "grn_date"
+    t.string   "bill"
+    t.string   "billdate"
+    t.integer  "inward_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "iclasses", :force => true do |t|
     t.string   "name"
     t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "inwards", :force => true do |t|
+    t.string   "indate"
+    t.string   "intime"
+    t.string   "chalan"
+    t.string   "chalandate"
+    t.integer  "p_order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,6 +64,8 @@ ActiveRecord::Schema.define(:version => 20120128165539) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "p_order_id"
+    t.integer  "rev_qty"
+    t.integer  "acc_qty"
   end
 
   create_table "p_orders", :force => true do |t|

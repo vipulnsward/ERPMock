@@ -1,0 +1,13 @@
+<%= semantic_form_for @inward do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :indate %>
+    <%= f.input :intime %>
+    <%= f.input :chalan %>
+    <%= f.input :chalandate %>
+    <%= f.input :p_order,  :as => :select,:include_blank => false,  :hint => " Shows ID : Ref : Supplier" , :label_method => Proc.new { |x| "#{x.id} : #{x.ref} : #{x.supplier.name}" } %> 
+  <% end %>
+
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>

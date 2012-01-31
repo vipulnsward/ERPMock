@@ -1,5 +1,27 @@
 module SessionsHelper
 
+#This is for GRN Reminder
+ 
+ def current_grn=(grn)
+  @grn=grn
+ end
+ 
+ def current_grn
+  @grn
+ end
+ 
+ def destroy_grn
+  @grn=nil
+ end
+
+ def grn?
+  !@grn.nil?
+ end
+
+ def remember_grn(grn)
+  cookies.permanent.signed[:grn]=grn
+ end
+
  def sign_in(user)
     cookies.permanent.signed[:remember_token] = [user.id, user.salt]
     self.current_user = user

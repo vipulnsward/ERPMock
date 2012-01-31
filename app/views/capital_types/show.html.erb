@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @capital_type.name %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @capital_type.amount %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @capital_type.type %>
+</p>
+
+<p>
+  <b>Ref:</b>
+  <%= @capital_type.ref %>
+</p>
+
+<p>
+  <b>Tr date:</b>
+  <%= @capital_type.tr_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_capital_type_path(@capital_type) %> |
+<%= link_to 'Back', capital_types_path %>

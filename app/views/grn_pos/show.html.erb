@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Grn date:</b>
+  <%= @grn_po.grn_date %>
+</p>
+
+<p>
+  <b>Bill:</b>
+  <%= @grn_po.bill %>
+</p>
+
+<p>
+  <b>Billdate:</b>
+  <%= @grn_po.billdate %>
+</p>
+
+<p>
+  <b>Inward:</b>
+  <%= @grn_po.inward_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_grn_po_path(@grn_po) %> |
+<%= link_to 'Back', grn_pos_path %> |
+<%= link_to 'Process PO', edit_p_order_path(@grn_po.inward.p_order) %>
+

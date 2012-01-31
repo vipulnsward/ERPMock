@@ -27,6 +27,8 @@
 <th>Name</th>
 <th>Rate</th>
 <th>Quantity</th>
+<th>Chalan Quantity</th>
+<th>Accepted Quantity</th>
 <th>Sub-Total</th>
 </tr>
 
@@ -39,6 +41,8 @@
     <td><%= item.item.name %></td>
     <td><%= item.item.rate %></td>
     <td><%= item.qty%></td> 
+    <td><%= item.rev_qty%></td>
+    <td><%= item.acc_qty%></td>
     <td><%= number_to_currency(sub).html_safe%></td>
   </tr>
 <%end%>
@@ -50,4 +54,8 @@
 <br/>
 
 <%= link_to 'Edit', edit_p_order_path(@p_order) %> |
-<%= link_to 'Back', p_orders_path %>
+<%= link_to 'Back', p_orders_path %> |
+<% if grn? %>
+  <%= link_to "Send GRN", edit_user_path(current_user) %>
+<% end %> 
+

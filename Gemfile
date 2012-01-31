@@ -12,6 +12,7 @@ gem 'json'
 gem 'carmen'
 gem 'therubyracer'
 gem 'formtastic'
+gem 'annotate', '~> 2.4.1.beta' 
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,6 +30,7 @@ gem 'jquery-rails'
 # Use unicorn as the web server
  gem 'unicorn'
 
+ gem 'rainbows'
 # Deploy with Capistrano
 # gem 'capistrano'
 

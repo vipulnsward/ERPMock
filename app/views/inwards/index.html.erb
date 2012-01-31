@@ -1,0 +1,31 @@
+<h1>Listing inwards</h1>
+
+<table>
+  <tr>
+    <th>Indate</th>
+    <th>Intime</th>
+    <th>Chalan</th>
+    <th>Chalandate</th>
+    <th>P order</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @inwards.each do |inward| %>
+  <tr>
+    <td><%= inward.indate %></td>
+    <td><%= inward.intime %></td>
+    <td><%= inward.chalan %></td>
+    <td><%= inward.chalandate %></td>
+    <td><%= inward.p_order_id %></td>
+    <td><%= link_to 'Show', inward %></td>
+    <td><%= link_to 'Edit', edit_inward_path(inward) %></td>
+    <td><%= link_to 'Destroy', inward, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Inward', new_inward_path %>

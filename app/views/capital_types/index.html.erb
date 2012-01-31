@@ -1,0 +1,31 @@
+<h1>Listing capital_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Type</th>
+    <th>Ref</th>
+    <th>Tr date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @capital_types.each do |capital_type| %>
+  <tr>
+    <td><%= capital_type.name %></td>
+    <td><%= capital_type.amount %></td>
+    <td><%= capital_type.type %></td>
+    <td><%= capital_type.ref %></td>
+    <td><%= capital_type.tr_date %></td>
+    <td><%= link_to 'Show', capital_type %></td>
+    <td><%= link_to 'Edit', edit_capital_type_path(capital_type) %></td>
+    <td><%= link_to 'Destroy', capital_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Capital type', new_capital_type_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  grn_date: MyString
+  bill: MyString
+  billdate: MyString
+  inward_id: 1
+
+two:
+  grn_date: MyString
+  bill: MyString
+  billdate: MyString
+  inward_id: 1

@@ -1,0 +1,29 @@
+<h1>Listing grn_pos</h1>
+
+<table>
+  <tr>
+    <th>Grn date</th>
+    <th>Bill</th>
+    <th>Billdate</th>
+    <th>Inward</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @grn_pos.each do |grn_po| %>
+  <tr>
+    <td><%= grn_po.grn_date %></td>
+    <td><%= grn_po.bill %></td>
+    <td><%= grn_po.billdate %></td>
+    <td><%= grn_po.inward_id %></td>
+    <td><%= link_to 'Show', grn_po %></td>
+    <td><%= link_to 'Edit', edit_grn_po_path(grn_po) %></td>
+    <td><%= link_to 'Destroy', grn_po, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Grn po', new_grn_po_path %>
