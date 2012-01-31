@@ -23,5 +23,5 @@
 
 <%= link_to 'Edit', edit_grn_po_path(@grn_po) %> |
 <%= link_to 'Back', grn_pos_path %> |
-<%= link_to 'Process PO', edit_p_order_path(@grn_po.inward.p_order) %>
-
+<%= link_to 'Process PO', edit_p_order_path(@grn_po.inward.p_order) %> |
+<%= link_to 'Process Payment', :controller => "sup_account", :action => "grn_pay", :id => @grn_po%>

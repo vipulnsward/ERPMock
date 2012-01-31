@@ -3,7 +3,10 @@ class CapitalTypesController < ApplicationController
   # GET /capital_types.json
   def index
     @capital_types = CapitalType.all
-
+    
+    
+    @tr_supplier_sum= TrAccount.sum(:amount)	
+			
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @capital_types }

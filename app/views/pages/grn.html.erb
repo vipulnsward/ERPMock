@@ -61,7 +61,7 @@
 
 <%sum=0.0%>
 <% @grn_po.inward.p_order.line_items.each do |item| %>
- <%sub=(item.qty*item.item.rate)%> 
+ <%sub=(item.acc_qty*item.item.rate)%> 
  <%sum =sum + sub%>
   <tr class="billable_item">
     <td class="first"><%= item.item.id%></td>

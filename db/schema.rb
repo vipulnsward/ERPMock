@@ -10,14 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120131070339) do
+ActiveRecord::Schema.define(:version => 20120131133452) do
+
+  create_table "capital_accounts", :force => true do |t|
+    t.float    "amount"
+    t.boolean  "type"
+    t.integer  "capital_type_id"
+    t.string   "tr_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "tr_type"
+  end
 
   create_table "capital_types", :force => true do |t|
     t.string   "name"
-    t.float    "amount"
-    t.boolean  "type"
-    t.string   "ref"
-    t.string   "tr_date"
+    t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -88,6 +95,16 @@ ActiveRecord::Schema.define(:version => 20120131070339) do
     t.string   "altmail"
     t.string   "ct1"
     t.string   "ct2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tr_accounts", :force => true do |t|
+    t.float    "amount"
+    t.string   "tr_date"
+    t.string   "tr_type"
+    t.string   "cheque"
+    t.integer  "supplier_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

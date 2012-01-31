@@ -1,29 +1,53 @@
-<h1>Listing capital_types</h1>
+<h1>Capital Account</h1>
 
 <table>
   <tr>
     <th>Name</th>
+    <th>Desc</th>
     <th>Amount</th>
-    <th>Type</th>
-    <th>Ref</th>
-    <th>Tr date</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
+<%tot=0%>
 <% @capital_types.each do |capital_type| %>
+<% cap=0 %>
+<% capital_type.capital_accounts.each do |c| %>
+<%if c.tr_type=="Deposit"%>
+<% cap=cap + c.amount%>
+<%else%>
+<% cap=cap - c.amount%>
+<%end%>
+<%end%>
+<%tot = tot + cap%>
   <tr>
     <td><%= capital_type.name %></td>
-    <td><%= capital_type.amount %></td>
-    <td><%= capital_type.type %></td>
-    <td><%= capital_type.ref %></td>
-    <td><%= capital_type.tr_date %></td>
+    <td><%= capital_type.desc %></td>
+    <td><%= cap%></td>
     <td><%= link_to 'Show', capital_type %></td>
     <td><%= link_to 'Edit', edit_capital_type_path(capital_type) %></td>
     <td><%= link_to 'Destroy', capital_type, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
+
+
+<!--This processes supplier trading account-->
+
+
+ <tr>
+    <td>Supplier Credit</td>
+    <td>This shows Credit to the supplier</td>
+    <td><%= @tr_supplier_sum %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+
+
+<tr>
+<td>Total:</td><td colspan=2><%=number_to_currency(tot-@tr_supplier_sum).html_safe%></td><tr>
 </table>
 
 <br />
