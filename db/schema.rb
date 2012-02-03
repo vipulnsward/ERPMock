@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120131133452) do
+ActiveRecord::Schema.define(:version => 20120201104508) do
 
   create_table "capital_accounts", :force => true do |t|
     t.float    "amount"
@@ -25,6 +25,31 @@ ActiveRecord::Schema.define(:version => 20120131133452) do
   create_table "capital_types", :force => true do |t|
     t.string   "name"
     t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cr_accounts", :force => true do |t|
+    t.float    "amount"
+    t.string   "cr_date"
+    t.string   "cr_type"
+    t.string   "cheque"
+    t.integer  "customer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "customers", :force => true do |t|
+    t.string   "name"
+    t.string   "desc"
+    t.string   "street"
+    t.string   "state"
+    t.string   "country"
+    t.integer  "zip"
+    t.string   "mail"
+    t.string   "altmail"
+    t.string   "ct1"
+    t.string   "ct2"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -63,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20120131133452) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "iclass_id"
+    t.float    "s_rate"
   end
 
   create_table "line_items", :force => true do |t|
@@ -73,6 +99,8 @@ ActiveRecord::Schema.define(:version => 20120131133452) do
     t.integer  "p_order_id"
     t.integer  "rev_qty"
     t.integer  "acc_qty"
+    t.integer  "sundry_grn_id"
+    t.integer  "s_order_id"
   end
 
   create_table "p_orders", :force => true do |t|
@@ -82,6 +110,23 @@ ActiveRecord::Schema.define(:version => 20120131133452) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "supplier_id"
+  end
+
+  create_table "s_orders", :force => true do |t|
+    t.string   "ref"
+    t.string   "issue"
+    t.integer  "customer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sundry_grns", :force => true do |t|
+    t.string   "bill"
+    t.string   "billdate"
+    t.string   "issue"
+    t.integer  "supplier_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "suppliers", :force => true do |t|

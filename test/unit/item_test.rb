@@ -10,6 +10,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  iclass_id  :integer
+#  s_rate     :float
 #
 
 require 'test_helper'

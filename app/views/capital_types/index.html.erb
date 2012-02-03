@@ -45,9 +45,18 @@
   </tr>
 
 
+ <tr>
+    <td>Debtors</td>
+    <td>This shows Debtors </td>
+    <td><%= @cr_customer_sum %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
 
 <tr>
-<td>Total:</td><td colspan=2><%=number_to_currency(tot-@tr_supplier_sum).html_safe%></td><tr>
+<td>Total:</td><td colspan=2><%=number_to_currency(tot-@tr_supplier_sum+@cr_customer_sum).html_safe%></td><tr>
 </table>
 
 <br />

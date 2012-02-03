@@ -2,14 +2,16 @@
 #
 # Table name: line_items
 #
-#  id         :integer         not null, primary key
-#  qty        :integer
-#  item_id    :integer
-#  created_at :datetime
-#  updated_at :datetime
-#  p_order_id :integer
-#  rev_qty    :integer
-#  acc_qty    :integer
+#  id            :integer         not null, primary key
+#  qty           :integer
+#  item_id       :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#  p_order_id    :integer
+#  rev_qty       :integer
+#  acc_qty       :integer
+#  sundry_grn_id :integer
+#  s_order_id    :integer
 #
 
 require 'test_helper'

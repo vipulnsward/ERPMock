@@ -2,20 +2,24 @@
 #
 # Table name: line_items
 #
-#  id         :integer         not null, primary key
-#  qty        :integer
-#  item_id    :integer
-#  created_at :datetime
-#  updated_at :datetime
-#  p_order_id :integer
-#  rev_qty    :integer
-#  acc_qty    :integer
+#  id            :integer         not null, primary key
+#  qty           :integer
+#  item_id       :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#  p_order_id    :integer
+#  rev_qty       :integer
+#  acc_qty       :integer
+#  sundry_grn_id :integer
+#  s_order_id    :integer
 #
 
 class LineItem < ActiveRecord::Base
 belongs_to :item
 belongs_to :p_order
+belongs_to :s_order
 #belongs_to :supplier
+belongs_to :sundry_grn
 validates_presence_of :qty
 validates_numericality_of :qty
 after_initialize :init

@@ -6,7 +6,9 @@ class CapitalTypesController < ApplicationController
     
     
     @tr_supplier_sum= TrAccount.sum(:amount)	
-			
+   
+    @cr_customer_sum= CrAccount.sum(:amount)
+   			
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @capital_types }

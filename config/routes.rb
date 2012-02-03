@@ -1,10 +1,22 @@
 MyMock::Application.routes.draw do
 
 
+  resources :cr_accounts
+
+  resources :s_orders
+
+  resources :customers
+
+  resources :sundry_grns
+
   get "sup_account/grn_pay"
 
   get "sup_account/grn_pending"
 
+  get "sup_account/sundry_pay"
+
+  get "sup_account/so_pay"  
+ 
   resources :tr_accounts
 
   resources :capital_accounts
