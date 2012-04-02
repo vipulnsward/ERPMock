@@ -3,13 +3,15 @@
     <%= f.input :ref %>
     <%= f.input :issue %>
     <%= f.input :expires %>
-    <%= f.input :supplier,  :include_blank => false%>	 
+    <%= f.input :supplier_id, :input_html => {"data-pre" => "[#{f.object.supplier.to_json}]", :class => "sup_input"} %>	 
    
     <%= f.inputs :name => 'Line Item #%i', :for => :line_items do |f|  %>
+      <%= f.input :req_qty%>	      
       <%= f.input :qty %>
       <%= f.input :rev_qty%>
       <%= f.input :acc_qty%>	
-      <%= f.input :item, :include_blank => false  %> 
+      <% #f.input :item_id, :input_html => {"data-pre" => "[#{f.object.item.to_json}]", :class => "token_input" } %>
+      <%= f.input :item, :as => :select, :include_blank =>false%>
     <%end%>
 
  <% end %>

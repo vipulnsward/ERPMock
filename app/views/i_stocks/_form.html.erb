@@ -1,0 +1,11 @@
+<%= semantic_form_for @i_stock do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :amt %>
+    <%= f.input :tr_type, :as => :select ,:include_blank => false, :collection => ["Inward", "Outward"]  %>
+    <%= f.input :item, :as => :select %>
+  <% end %>
+
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>

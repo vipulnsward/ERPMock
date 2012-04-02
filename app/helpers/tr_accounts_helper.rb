@@ -1,0 +1,2 @@
+module TrAccountsHelper
+end

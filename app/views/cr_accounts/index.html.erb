@@ -1,0 +1,31 @@
+<h1>Listing cr_accounts</h1>
+
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>Cr date</th>
+    <th>Cr type</th>
+    <th>Cheque</th>
+    <th>Customer</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cr_accounts.each do |cr_account| %>
+  <tr>
+    <td><%= cr_account.amount %></td>
+    <td><%= cr_account.cr_date %></td>
+    <td><%= cr_account.cr_type %></td>
+    <td><%= cr_account.cheque %></td>
+    <td><%= cr_account.customer_id %></td>
+    <td><%= link_to 'Show', cr_account %></td>
+    <td><%= link_to 'Edit', edit_cr_account_path(cr_account) %></td>
+    <td><%= link_to 'Destroy', cr_account, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cr account', new_cr_account_path %>

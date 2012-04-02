@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Amount:</b>
+  <%= @tr_account.amount %>
+</p>
+
+<p>
+  <b>Tr date:</b>
+  <%= @tr_account.tr_date %>
+</p>
+
+<p>
+  <b>Tr type:</b>
+  <%= @tr_account.tr_type %>
+</p>
+
+<p>
+  <b>Cheque:</b>
+  <%= @tr_account.cheque %>
+</p>
+
+<p>
+  <b>Supplier:</b>
+  <%= @tr_account.supplier_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_tr_account_path(@tr_account) %> |
+<%= link_to 'Back', tr_accounts_path %>

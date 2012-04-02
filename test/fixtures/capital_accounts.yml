@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: capital_accounts
+#
+#  id              :integer         not null, primary key
+#  amount          :float
+#  type            :boolean
+#  capital_type_id :integer
+#  tr_date         :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  tr_type         :string(255)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  amount: 1.5
+  type: false
+  capital_type_id: 1
+  tr_date: MyString
+
+two:
+  amount: 1.5
+  type: false
+  capital_type_id: 1
+  tr_date: MyString

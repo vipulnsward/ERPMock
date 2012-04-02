@@ -1,0 +1,27 @@
+<h1>Listing s_orders</h1>
+
+<table>
+  <tr>
+    <th>Ref</th>
+    <th>Issue</th>
+    <th>Customer</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @s_orders.each do |s_order| %>
+  <tr>
+    <td><%= s_order.ref %></td>
+    <td><%= s_order.issue %></td>
+    <td><%= s_order.customer_id %></td>
+    <td><%= link_to 'Show', s_order %></td>
+    <td><%= link_to 'Edit', edit_s_order_path(s_order) %></td>
+    <td><%= link_to 'Destroy', s_order, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New S order', new_s_order_path %>

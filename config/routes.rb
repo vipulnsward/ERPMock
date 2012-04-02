@@ -1,6 +1,8 @@
 MyMock::Application.routes.draw do
 
 
+  resources :i_stocks
+
   resources :cr_accounts
 
   resources :s_orders
@@ -31,7 +33,12 @@ MyMock::Application.routes.draw do
 
   resources :suppliers
 
-  resources :line_items
+  resources :line_items do
+    collection do
+      get 'search'
+    end
+  end
+
 
   resources :iclasses
 

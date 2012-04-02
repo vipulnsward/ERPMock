@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: s_orders
+#
+#  id          :integer         not null, primary key
+#  ref         :string(255)
+#  issue       :string(255)
+#  customer_id :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ref: MyString
+  issue: MyString
+  customer_id: 1
+
+two:
+  ref: MyString
+  issue: MyString
+  customer_id: 1

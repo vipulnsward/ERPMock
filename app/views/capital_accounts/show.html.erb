@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Amount:</b>
+  <%= @capital_account.amount %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @capital_account.tr_type  %>
+</p>
+
+<p>
+  <b>Capital type:</b>
+  <%= @capital_account.capital_type.name%>
+</p>
+
+<p>
+  <b>Transaction date:</b>
+  <%= @capital_account.tr_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_capital_account_path(@capital_account) %> |
+<%= link_to 'Back', capital_accounts_path %>

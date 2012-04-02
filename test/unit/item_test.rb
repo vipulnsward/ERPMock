@@ -11,6 +11,7 @@
 #  updated_at :datetime
 #  iclass_id  :integer
 #  s_rate     :float
+#  stock      :integer
 #
 
 require 'test_helper'

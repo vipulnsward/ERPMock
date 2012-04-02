@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ref:</b>
+  <%= @s_order.ref %>
+</p>
+
+<p>
+  <b>Issue:</b>
+  <%= @s_order.issue %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @s_order.customer_id %>
+</p>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Rate</th>
+<th>Quantity</th>
+<th>Chalan Quantity</th>
+<th>Accepted Quantity</th>
+<th>Sub-Total</th>
+</tr>
+
+<%sum=0.0%>
+<% @s_order.line_items.each do |item| %>
+ <%sub=(item.acc_qty*item.item.rate)%> 
+ <%sum =sum + sub%>
+  <tr>
+    <td><%= item.item.id%></td>
+    <td><%= item.item.name %></td>
+    <td><%= item.item.rate %></td>
+    <td><%= item.qty%></td> 
+    <td><%= item.rev_qty%></td>
+    <td><%= item.acc_qty%></td>
+    <td><%= number_to_currency(sub).html_safe%></td>
+  </tr>
+<%end%>
+
+
+</table>
+
+<b>Total : <%=number_to_currency(sum).html_safe%> </b>
+<br/>
+
+<%= link_to 'Edit', edit_s_order_path(@s_order) %> |
+<%= link_to 'Back', s_orders_path %> |
+<%= link_to 'Process Payment', :controller => "sup_account", :action => "so_pay", :id => @s_order%>

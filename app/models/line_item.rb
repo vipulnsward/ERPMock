@@ -12,9 +12,14 @@
 #  acc_qty       :integer
 #  sundry_grn_id :integer
 #  s_order_id    :integer
+#  req_qty       :integer
 #
 
 class LineItem < ActiveRecord::Base
+
+attr_accessible :item_token
+attr_accessible :qty, :req_qty, :acc_qty, :rev_qty, :item_id
+
 belongs_to :item
 belongs_to :p_order
 belongs_to :s_order
@@ -24,9 +29,17 @@ validates_presence_of :qty
 validates_numericality_of :qty
 after_initialize :init
 
+
     def init
       self.rev_qty  ||= 0           #will set the default value only if it's nil
-      self.acc_qty ||= 0 #let's you set a default association
+      self.acc_qty ||= 0 	    #let's you set a default association
     end
+
+attr_reader :item_token
+  
+  def item_token=(id)
+    self.item_id = id
+  end
+
 
 end

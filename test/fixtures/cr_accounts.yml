@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: cr_accounts
+#
+#  id          :integer         not null, primary key
+#  amount      :float
+#  cr_date     :string(255)
+#  cr_type     :string(255)
+#  cheque      :string(255)
+#  customer_id :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  amount: 1.5
+  cr_date: MyString
+  cr_type: MyString
+  cheque: MyString
+  customer_id: 1
+
+two:
+  amount: 1.5
+  cr_date: MyString
+  cr_type: MyString
+  cheque: MyString
+  customer_id: 1

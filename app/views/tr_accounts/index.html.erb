@@ -1,0 +1,31 @@
+<h1>Listing Supplier Transactions</h1>
+
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>Tr date</th>
+    <th>Tr type</th>
+    <th>Cheque</th>
+    <th>Supplier</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tr_accounts.each do |tr_account| %>
+  <tr>
+    <td><%= tr_account.amount %></td>
+    <td><%= tr_account.tr_date %></td>
+    <td><%= tr_account.tr_type %></td>
+    <td><%= tr_account.cheque %></td>
+    <td><%= tr_account.supplier.name%></td>
+    <td><%= link_to 'Show', tr_account %></td>
+    <td><%= link_to 'Edit', edit_tr_account_path(tr_account) %></td>
+    <td><%= link_to 'Destroy', tr_account, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tr account', new_tr_account_path %>

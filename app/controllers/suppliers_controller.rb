@@ -3,10 +3,11 @@ class SuppliersController < ApplicationController
   # GET /suppliers.json
   def index
     @suppliers = Supplier.all
+    @s = Supplier.where("name like ?", "%#{params[:q]}%")
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @suppliers }
+      format.json { render :json => @s.map(&:attributes) }
     end
   end
 

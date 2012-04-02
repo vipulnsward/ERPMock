@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Amount:</b>
+  <%= @cr_account.amount %>
+</p>
+
+<p>
+  <b>Cr date:</b>
+  <%= @cr_account.cr_date %>
+</p>
+
+<p>
+  <b>Cr type:</b>
+  <%= @cr_account.cr_type %>
+</p>
+
+<p>
+  <b>Cheque:</b>
+  <%= @cr_account.cheque %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @cr_account.customer_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_cr_account_path(@cr_account) %> |
+<%= link_to 'Back', cr_accounts_path %>

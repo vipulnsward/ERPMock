@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bill:</b>
+  <%= @sundry_grn.bill %>
+</p>
+
+<p>
+  <b>Billdate:</b>
+  <%= @sundry_grn.billdate %>
+</p>
+
+<p>
+  <b>Issue:</b>
+  <%= @sundry_grn.issue %>
+</p>
+
+<p>
+  <b>Supplier:</b>
+  <%= @sundry_grn.supplier_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_sundry_grn_path(@sundry_grn) %> |
+<%= link_to 'Back', sundry_grns_path %> |
+<%= link_to 'Process Payment', :controller => "sup_account", :action => "sundry_pay", :id => @sundry_grn%>

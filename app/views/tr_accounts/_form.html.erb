@@ -1,0 +1,13 @@
+<%= semantic_form_for @tr_account do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :amount %>
+    <%= f.input :tr_date %>
+    <%= f.input :tr_type, :as => :select ,:include_blank => false, :collection => ["Cash", "Cheque"] %>
+    <%= f.input :cheque %>
+    <%= f.input :supplier, :include_blank =>false %>
+  <% end %>
+
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>

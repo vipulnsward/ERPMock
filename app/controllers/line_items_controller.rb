@@ -80,4 +80,12 @@ class LineItemsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def search
+	# find the matching categories, Category.search method should implement all the logic needed
+	items = params[:q].blank? ? [] : Item.where("name like ?", "%#{params[:q]}%")
+	render :json => items.collect {|i| {:id => i.id, :name => i.name} }
+  end  
+
+
 end

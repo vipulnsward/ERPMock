@@ -1,0 +1,29 @@
+<h1>Listing i_stocks</h1>
+
+<table>
+  <tr>
+    <th>Amt</th>
+    <th>Tr type</th>
+    <th>Item</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @i_stocks.each do |i_stock| %>
+  <tr>
+    <td><%= i_stock.amt %></td>
+    <td><%= i_stock.tr_type %></td>
+    <td><%= i_stock.item.name %></td>
+    <td><%= i_stock.created_at%></td>
+    <td><%= link_to 'Show', i_stock %></td>
+    <td><%= link_to 'Edit', edit_i_stock_path(i_stock) %></td>
+    <td><%= link_to 'Destroy', i_stock, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New I stock', new_i_stock_path %>

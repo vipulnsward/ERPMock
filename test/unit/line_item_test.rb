@@ -12,6 +12,7 @@
 #  acc_qty       :integer
 #  sundry_grn_id :integer
 #  s_order_id    :integer
+#  req_qty       :integer
 #
 
 require 'test_helper'

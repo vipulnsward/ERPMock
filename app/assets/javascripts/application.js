@@ -9,7 +9,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-    // put all your jQuery goodness in here.
+// put all your jQuery goodness in here.
 		var icons = {
 			header: "ui-icon-circle-arrow-e",
 			headerSelected: "ui-icon-circle-arrow-s"
@@ -26,6 +26,23 @@ $(document).ready(function() {
         });
 
 
+	$(".sup_input").tokenInput("/suppliers.json", {
+        crossDomain: false,
+        prePopulate: $(this).data("pre"),
+        tokenLimit: 1
+      });
+
+
+	$(".token_input").tokenInput('/items.json', {
+	crossDomain: false,
+	prePopulate: $(this).data('pre'),
+	tokenValue: 'name',
+	tokenLimit: 1
+	});
+	
+
+
 
 });
+
 

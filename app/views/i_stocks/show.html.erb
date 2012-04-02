@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Amt:</b>
+  <%= @i_stock.amt %>
+</p>
+
+<p>
+  <b>Tr type:</b>
+  <%= @i_stock.tr_type %>
+</p>
+
+<p>
+  <b>Item:</b>
+  <%= @i_stock.item.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_i_stock_path(@i_stock) %> |
+<%= link_to 'Back', i_stocks_path %>

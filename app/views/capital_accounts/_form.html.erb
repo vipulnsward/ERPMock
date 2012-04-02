@@ -1,0 +1,12 @@
+<%= semantic_form_for @capital_account do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :amount %>
+    <%= f.input :tr_type , :as => :radio ,:hint=> "Select Yes for Deposit and No for Payments made", :label => "Transaction Type", :collection => ["Deposit", "Payment"] %>
+    <%= f.input :capital_type,  :include_blank => false %>
+    <%= f.input :tr_date %>
+  <% end %>
+
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>

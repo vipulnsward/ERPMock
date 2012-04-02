@@ -3,10 +3,11 @@
     <%= f.input :name %>
     <%= f.input :rate %>
     <%= f.input :s_rate %>	
-    <%= f.input :unit %>
+    <%= f.input :unit, :as => :select, :include_blank =>false ,:collection => ["Nos", "Boxes", "KM", "M", "KG"] %>
     <%= f.input :desc %>
     <%= f.input :iclass,  :include_blank => false %>
-  <% end %>
+    <%= f.input :stock, :label => "Opening Stock"%> 
+ <% end %>
 
   <%= f.buttons do %>
     <%= f.commit_button %>

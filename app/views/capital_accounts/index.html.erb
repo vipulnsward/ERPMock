@@ -1,0 +1,29 @@
+<h1>Listing capital_accounts</h1>
+
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>Type</th>
+    <th>Capital type</th>
+    <th>Transaction date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @capital_accounts.each do |capital_account| %>
+  <tr>
+    <td><%= capital_account.amount %></td>
+    <td><%= capital_account.tr_type %></td>
+    <td><%= capital_account.capital_type.name %></td>
+    <td><%= capital_account.tr_date %></td>
+    <td><%= link_to 'Show', capital_account %></td>
+    <td><%= link_to 'Edit', edit_capital_account_path(capital_account) %></td>
+    <td><%= link_to 'Destroy', capital_account, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Capital account', new_capital_account_path %>

@@ -28,6 +28,7 @@ class POrdersController < ApplicationController
 
     3.times do
        line= @p_order.line_items.build
+       line.item=Item.first	
     end
 
     respond_to do |format|
