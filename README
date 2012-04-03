@@ -3,3 +3,6 @@ Draft for Rails ERP App
 
 Check-Out Gemfile for features used
 
+Note:
+You will need to run over passenger/{I use passenger standalone} or other multi threaded server
+for using the GRN generation
