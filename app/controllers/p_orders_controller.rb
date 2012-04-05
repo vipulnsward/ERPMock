@@ -25,12 +25,17 @@ class POrdersController < ApplicationController
   # GET /p_orders/new.json
   def new
     @p_order = POrder.new
+  
+   if(params.has_key?(:xid))
+
+   else 
 
     3.times do
        line= @p_order.line_items.build
        line.item=Item.first	
     end
 
+  end # end if
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @p_order }

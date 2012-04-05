@@ -1,0 +1,17 @@
+# == Schema Information
+#
+# Table name: requisitions
+#
+#  id         :integer         not null, primary key
+#  issue      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  issue: MyString
+
+two:
+  issue: MyString

@@ -1,6 +1,8 @@
 MyMock::Application.routes.draw do
 
 
+  resources :requisitions
+
   resources :i_stocks
 
   resources :cr_accounts

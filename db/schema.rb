@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120208060455) do
+ActiveRecord::Schema.define(:version => 20120211180222) do
 
   create_table "capital_accounts", :force => true do |t|
     t.float    "amount"
@@ -111,6 +112,7 @@ ActiveRecord::Schema.define(:version => 20120208060455) do
     t.integer  "sundry_grn_id"
     t.integer  "s_order_id"
     t.integer  "req_qty"
+    t.integer  "requisition_id"
   end
 
   create_table "p_orders", :force => true do |t|
@@ -120,6 +122,12 @@ ActiveRecord::Schema.define(:version => 20120208060455) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "supplier_id"
+  end
+
+  create_table "requisitions", :force => true do |t|
+    t.string   "issue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "s_orders", :force => true do |t|

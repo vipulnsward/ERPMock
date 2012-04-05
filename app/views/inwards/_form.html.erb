@@ -4,7 +4,7 @@
     <%= f.input :intime %>
     <%= f.input :chalan %>
     <%= f.input :chalandate %>
-    <%= f.input :p_order,  :as => :select,:include_blank => false,  :hint => " Shows ID : Ref : Supplier" , :label_method => Proc.new { |x| "#{x.id} : #{x.ref} : #{x.supplier.name}" } %> 
+    <%= f.input :p_order,  :as => :select,:include_blank => false,  :hint => " Shows ID : Ref : Supplier" , :member_label => Proc.new { |x| "#{x.id} : #{x.ref} : #{x.supplier.name}" } %> 
   <% end %>
 
   <%= f.buttons do %>
